@@ -19,7 +19,7 @@ if (window.matchMedia('(pointer: fine)').matches) {
   };
   animCursor();
 
-  document.querySelectorAll('a,button,.reason-card,.step-card,.testi-card,.faq-q').forEach(el => {
+  document.querySelectorAll('a,button,.reason-card,.step-card,.testi-card,.faq-question').forEach(el => {
     el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
     el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
   });
@@ -125,14 +125,25 @@ document.querySelectorAll('.stat-item').forEach(item => {
 
 // ── FAQ ACCORDION ─────────────────────
 function toggleFaq(btn) {
-  const isOpen = btn.classList.contains('open');
-  document.querySelectorAll('.faq-q.open').forEach(q => {
-    q.classList.remove('open');
-    q.closest('.faq-item').querySelector('.faq-a').classList.remove('open');
+  const item = btn.closest('.faq-item');
+  const isActive = item.classList.contains('active');
+  
+  // Close all other items
+  document.querySelectorAll('.faq-item.active').forEach(otherItem => {
+    if (otherItem !== item) {
+      otherItem.classList.remove('active');
+      otherItem.querySelector('.faq-answer').style.maxHeight = null;
+    }
   });
-  if (!isOpen) {
-    btn.classList.add('open');
-    btn.closest('.faq-item').querySelector('.faq-a').classList.add('open');
+
+  // Toggle current item
+  if (isActive) {
+    item.classList.remove('active');
+    item.querySelector('.faq-answer').style.maxHeight = null;
+  } else {
+    item.classList.add('active');
+    const answer = item.querySelector('.faq-answer');
+    answer.style.maxHeight = answer.scrollHeight + "px";
   }
 }
 window.toggleFaq = toggleFaq; // expose to inline onclick
