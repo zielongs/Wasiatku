@@ -1,22 +1,15 @@
-<?php
-// harga.php
-
-// Common header logic (simplified for local rendering without DB)
-$page_title = "Harga & Pakej Kami | WasiatKu";
-$current_page = "harga";
-?>
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><?php echo $page_title; ?></title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Amiri:wght@400;700&family=Roboto+Slab:wght@300;400;500;700&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harga & Pakej Kami | WasiatKu</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Amiri:wght@400;700&family=Roboto+Slab:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body class="page-harga">
 
@@ -24,17 +17,17 @@ $current_page = "harga";
   <header>
     <nav id="navbar" class="scrolled">
       <div class="nav-logo-wrap">
-        <a href="index.php" class="logo">
+        <a href="index.html" class="logo">
           <img src="images/logo_header.png" alt="WasiatKu" class="nav-logo-img">
         </a>
       </div>
       <div class="nav-bottom-row">
         <ul class="nav-links">
-          <li><a href="index.php" class="<?php echo $current_page==='home'?'active':'' ?>">Laman Utama</a></li>
-          <li><a href="harga.php" class="<?php echo $current_page==='harga'?'active':'' ?>">Harga</a></li>
-          <li><a href="tentang_kami.php" class="<?php echo $current_page==='tentang'?'active':'' ?>">Tentang Kami</a></li>
-          <li><a href="soalan_lazim.php" class="<?php echo $current_page==='faq'?'active':'' ?>">Soalan Lazim</a></li>
-          <li><a href="hubungi_kami.php" class="<?php echo $current_page==='hubungi'?'active':'' ?>">Hubungi Kami</a></li>
+          <li><a href="index.html">Laman Utama</a></li>
+          <li><a href="harga.html" class="active">Harga</a></li>
+          <li><a href="tentang_kami.html">Tentang Kami</a></li>
+          <li><a href="soalan_lazim.html">Soalan Lazim</a></li>
+          <li><a href="hubungi_kami.html">Hubungi Kami</a></li>
         </ul>
         <div class="nav-right">
           <a href="#" class="btn-login">Log Masuk</a>
@@ -99,7 +92,7 @@ $current_page = "harga";
     </div>
   </section>
 
-  <!-- ═══ FOOTER ═══ -->
+  <!-- ================= FOOTER ================= -->
   <footer>
     <div class="footer-bg-img" style="background-image:url('images/hero-bg.jpg');"></div>
     <div class="footer-overlay"></div>
@@ -140,20 +133,20 @@ $current_page = "harga";
           <div class="footer-col">
             <h5>Laman Utama</h5>
             <ul>
-            <li><a href="index.php" class="<?php echo $current_page==='home'?'active':'' ?>">Laman Utama</a></li>
-            <li><a href="harga.php" class="<?php echo $current_page==='harga'?'active':'' ?>">Harga</a></li>
-            <li><a href="tentang_kami.php" class="<?php echo $current_page==='tentang'?'active':'' ?>">Tentang Kami</a></li>
-            <li><a href="soalan_lazim.php" class="<?php echo $current_page==='faq'?'active':'' ?>">Soalan Lazim</a></li>
-            <li><a href="hubungi_kami.php" class="<?php echo $current_page==='hubungi'?'active':'' ?>">Hubungi Kami</a></li>
+              <li><a href="index.html">Laman Utama</a></li>
+              <li><a href="harga.html" class="active">Harga</a></li>
+              <li><a href="tentang_kami.html">Tentang Kami</a></li>
+              <li><a href="soalan_lazim.html">Soalan Lazim</a></li>
+              <li><a href="hubungi_kami.html">Hubungi Kami</a></li>
             </ul>
           </div>
           <div class="footer-col">
             <h5>Lain-lain</h5>
             <ul>
-              <li><a href="terma_syarat.php">Terma &amp; Syarat</a></li>
-              <li><a href="terma_penggunaan.php">Terma Penggunaan</a></li>
-              <li><a href="pendedahan_produk.php">Pendedahan Produk</a></li>
-              <li><a href="perkongsian.php">Perkongsian</a></li>
+              <li><a href="terma_syarat.html">Terma &amp; Syarat</a></li>
+              <li><a href="terma_penggunaan.html">Terma Penggunaan</a></li>
+              <li><a href="pendedahan_produk.html">Pendedahan Produk</a></li>
+              <li><a href="perkongsian.html">Perkongsian</a></li>
             </ul>
           </div>
         </div>
@@ -168,7 +161,7 @@ $current_page = "harga";
 
       <div class="footer-divider"></div>
       <div class="footer-bottom">
-        <p>© 2023 – <?php echo date('Y'); ?> All rights reserved | WasiatKu.com.my</p>
+        <p>© 2023 – 2026 All rights reserved | WasiatKu.com.my</p>
         <p class="footer-bottom-ar">جميع الحقوق محفوظة</p>
       </div>
     </div>
