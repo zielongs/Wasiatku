@@ -10,10 +10,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Amiri:ital,wght@0,400;0,700;1,400&family=Roboto+Slab:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/terma_syarat.css">
+  <link rel="stylesheet" href="css/terma_penggunaan.css">
 </head>
 <body>
 
-  <!-- NAVBAR -->
+  <!-- ═══ NAVBAR ═══ -->
   <nav id="navbar" class="scrolled">
     <div class="nav-logo-wrap">
       <a href="index.html" class="logo">
@@ -43,7 +44,7 @@
     </div>
   </nav>
 
-  <!-- HERO -->
+  <!-- ═══ HERO ═══ -->
   <section class="inner-page-hero">
     <div class="glow-orb glow-orb-1"></div>
     <div class="glow-orb glow-orb-2"></div>
@@ -55,7 +56,7 @@
     </div>
   </section>
 
-  <!-- LEGAL LAYOUT -->
+  <!-- ═══ LEGAL LAYOUT ═══ -->
   <div class="legal-layout">
 
     <!-- SIDEBAR TOC -->
@@ -88,7 +89,7 @@
           <strong>Terma Penggunaan Laman Web wasiatku.com.my</strong><br>
           Disediakan oleh <strong>WASIATKU FINTECH SDN. BHD.</strong> (202301043968)
         </p>
-        <button class="btn-print" onclick="window.print()">&#128424; Cetak Dokumen</button>
+        <button class="btn-print" id="printBtn">&#128424; Cetak Dokumen</button>
       </div>
 
       <div class="legal-notice">
@@ -96,7 +97,7 @@
         <p>Sila baca dengan teliti dan jika perlu dapatkan nasihat undang-undang bebas sebelum menggunakan laman web ini. Dengan mengesahkan penggunaan Laman Web ini, anda dianggap <strong>bersetuju dengan semua terma dan syarat</strong> yang terkandung di sini.</p>
       </div>
 
-      <!-- S1: Pengenalan -->
+      <!-- Section 1: Pengenalan -->
       <section class="legal-section" id="tp-pengenalan">
         <div class="legal-section-header">
           <div class="section-num">1</div>
@@ -106,7 +107,7 @@
         <p>Kami berhak mengubah, menambah, atau menghapus mana-mana terma mengikut budi bicara mutlak kami pada bila-bila masa <strong>tanpa notis terlebih dahulu</strong>. Sila semak terma ini dari semasa ke semasa untuk perubahan. Penggunaan berterusan anda terhadap Laman Web dan Perkhidmatan ini menandakan penerimaan anda terhadap terma dan syarat yang berkuat kuasa pada masa penggunaan.</p>
       </section>
 
-      <!-- S2: Bukan Nasihat -->
+      <!-- Section 2: Bukan Nasihat -->
       <section class="legal-section" id="tp-nasihat">
         <div class="legal-section-header">
           <div class="section-num">2</div>
@@ -120,7 +121,7 @@
         <p>Kami menafikan segala liabiliti yang timbul daripada penggunaan anda terhadap Laman Web ini. Penggunaan Laman Web dan/atau Perkhidmatan atau produk <strong>tidak mewujudkan hubungan peguam-klien</strong>.</p>
       </section>
 
-      <!-- S3: Kandungan -->
+      <!-- Section 3: Kandungan -->
       <section class="legal-section" id="tp-kandungan">
         <div class="legal-section-header">
           <div class="section-num">3</div>
@@ -130,7 +131,7 @@
         <p>Kami tidak menyemak semua bahan atau mesej yang dihantar ke Laman Web dan oleh itu tidak bertanggungjawab atas kandungannya. Kami berhak menghapuskan mana-mana bahan daripada Laman Web <em>atas sebarang sebab</em>.</p>
       </section>
 
-      <!-- S4: Pihak Ketiga -->
+      <!-- Section 4: Pihak Ketiga -->
       <section class="legal-section" id="tp-pihakketiga">
         <div class="legal-section-header">
           <div class="section-num">4</div>
@@ -144,7 +145,7 @@
         </div>
       </section>
 
-      <!-- S5: Keselamatan -->
+      <!-- Section 5: Keselamatan -->
       <section class="legal-section" id="tp-keselamatan">
         <div class="legal-section-header">
           <div class="section-num">5</div>
@@ -158,7 +159,7 @@
         </div>
       </section>
 
-      <!-- S6: Sekatan -->
+      <!-- Section 6: Sekatan -->
       <section class="legal-section" id="tp-sekatan">
         <div class="legal-section-header">
           <div class="section-num">6</div>
@@ -178,7 +179,7 @@
         </div>
       </section>
 
-      <!-- S7: Penafian -->
+      <!-- Section 7: Penafian -->
       <section class="legal-section" id="tp-penafian">
         <div class="legal-section-header">
           <div class="section-num">7</div>
@@ -193,7 +194,7 @@
         <p>Walaupun dengan penafian liabiliti umum kami, jumlah liabiliti keseluruhan kami, jika ada, adalah <strong>terhad kepada jumlah bayaran yang telah dibayar oleh anda</strong>.</p>
       </section>
 
-      <!-- S8: Penamatan -->
+      <!-- Section 8: Penamatan -->
       <section class="legal-section" id="tp-penamatan">
         <div class="legal-section-header">
           <div class="section-num">8</div>
@@ -206,7 +207,7 @@
         </ul>
       </section>
 
-      <!-- S9: Pemulangan -->
+      <!-- Section 9: Pemulangan -->
       <section class="legal-section" id="tp-pemulangan">
         <div class="legal-section-header">
           <div class="section-num">9</div>
@@ -219,18 +220,17 @@
         <p>Kami dengan ini menasihatkan serta amat mengesyorkan semua pengguna dan pelanggan untuk membuat <strong>pengesahan niat sebelum meneruskan sebarang pembayaran</strong>.</p>
         <p>Bagi perkhidmatan lain yang ditawarkan oleh Wasiatku Fintech Sdn Bhd, pemulangan wang boleh dipertimbangkan berdasarkan situasi tertentu dan tertakluk kepada kelulusan pihak pengurusan.</p>
 
-        <!-- Refund info box -->
-        <div style="margin-top:18px; background:white; border:1px solid rgba(219,158,48,0.2); border-radius:12px; padding:22px 26px; display:flex; align-items:center; gap:20px; box-shadow:0 4px 16px rgba(0,0,0,0.04);">
-          <div style="font-size:2rem; flex-shrink:0;">&#128176;</div>
+        <div class="refund-info-box">
+          <div class="refund-icon">&#128176;</div>
           <div>
-            <div style="font-family:var(--font-h); font-size:0.8rem; color:var(--navy); margin-bottom:4px;">Caj Pemulangan Yang Diluluskan</div>
-            <div style="font-family:var(--font-h); font-size:1.6rem; color:var(--gold); line-height:1;">RM 100.00</div>
-            <div style="font-size:0.78rem; color:var(--muted); margin-top:4px;">Caj pentadbiran dan pemprosesan bagi setiap pemulangan wang yang diluluskan.</div>
+            <div class="refund-title">Caj Pemulangan Yang Diluluskan</div>
+            <div class="refund-amount">RM 100.00</div>
+            <div class="refund-note">Caj pentadbiran dan pemprosesan bagi setiap pemulangan wang yang diluluskan.</div>
           </div>
         </div>
       </section>
 
-      <!-- S10: Undang-undang -->
+      <!-- Section 10: Undang-undang -->
       <section class="legal-section" id="tp-undang">
         <div class="legal-section-header">
           <div class="section-num">10</div>
@@ -239,7 +239,7 @@
         <p>Perjanjian ini akan ditafsir dan ditadbir selaras dengan <strong>undang-undang Malaysia</strong>. Anda bersetuju untuk tertunduk kepada bidang kuasa eksklusif Mahkamah di Malaysia, khususnya di <strong>Kuala Lumpur</strong>, bagi menyelesaikan sebarang pertikaian yang timbul daripada atau berkaitan dengan perjanjian ini.</p>
       </section>
 
-      <!-- S11: Pelbagai -->
+      <!-- Section 11: Pelbagai -->
       <section class="legal-section" id="tp-pelbagai">
         <div class="legal-section-header">
           <div class="section-num">11</div>
@@ -252,35 +252,33 @@
         </ul>
 
         <!-- Contact block -->
-        <div style="margin-top:24px; background:linear-gradient(135deg,var(--navy),#1a3a2a); border-radius:14px; padding:28px 30px; display:flex; flex-wrap:wrap; gap:20px; align-items:center; justify-content:space-between;">
+        <div class="contact-block">
           <div>
-            <div style="font-family:var(--font-h);font-size:0.75rem;color:var(--gold-light);margin-bottom:14px;text-transform:uppercase;letter-spacing:0.1em;">Ada Soalan?</div>
-            <div style="display:flex;gap:12px;align-items:center;color:rgba(255,255,255,0.78);font-size:0.88rem;margin-bottom:10px;">
-              <span>&#128222;</span><a href="tel:+60182209929" style="color:rgba(255,255,255,0.85);text-decoration:none;">+6018-220 9929</a>
+            <div class="contact-block-title">Ada Soalan?</div>
+            <div class="contact-block-phone">
+              <span>&#128222;</span>
+              <a href="tel:+60182209929">+6018-220 9929</a>
             </div>
-            <div style="display:flex;gap:12px;align-items:center;color:rgba(255,255,255,0.78);font-size:0.88rem;">
-              <span>&#9993;&#65039;</span><a href="mailto:enquiry@wasiatku.com.my" style="color:rgba(255,255,255,0.85);text-decoration:none;">enquiry@wasiatku.com.my</a>
+            <div class="contact-block-email">
+              <span>&#9993;&#65039;</span>
+              <a href="mailto:enquiry@wasiatku.com.my">enquiry@wasiatku.com.my</a>
             </div>
           </div>
-          <a href="hubungi_kami.html" style="display:inline-block;background:var(--gold);color:var(--navy);padding:12px 26px;border-radius:8px;font-family:var(--font-h);font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;text-decoration:none;transition:background 0.3s,transform 0.3s;"
-             onmouseover="this.style.background='#efb956';this.style.transform='translateY(-2px)'"
-             onmouseout="this.style.background='#db9e30';this.style.transform='translateY(0)'">
-            Hubungi Kami &#8594;
-          </a>
+          <a href="hubungi_kami.html" class="contact-block-btn">Hubungi Kami &#8594;</a>
         </div>
       </section>
 
     </main>
   </div>
 
-  <!-- GREEN CTA -->
+  <!-- ═══ GREEN CTA ═══ -->
   <section class="green-strip">
     <h2>Bersedia Menulis Wasiat Anda?</h2>
     <p>Dengan memahami Terma Penggunaan kami, anda sudah selangkah lebih dekat untuk memulakan perancangan legasi anda.</p>
     <a href="https://app.mysmartwills.com/?item_id=80" target="_blank" rel="noopener" class="btn-gold">Tulis Wasiat Sekarang &#8594;</a>
   </section>
 
-  <!-- FOOTER -->
+  <!-- ═══ FOOTER ═══ -->
   <footer>
     <div class="footer-bg-img" style="background-image:url('images/hero-bg.jpg');"></div>
     <div class="footer-overlay"></div>
@@ -290,7 +288,7 @@
           <img src="images/slogan.png" alt="SmartWills WasiatKu" class="footer-logo">
           <div class="footer-brand-text">
             <p class="footer-tagline">Your smartest &amp; fastest online will writer</p>
-            <p class="footer-tagline-ar">&#1571;&#1584;&#1603;&#1609; &#1608;&#1571;&#1587;&#1585;&#1593; &#1603;&#1575;&#1578;&#1576; &#1608;&#1589;&#1610;&#1577; &#1601;&#1610; &#1605;&#1575;&#1604;&#1610;&#1586;&#1610;&#1575;</p>
+            <p class="footer-tagline-ar">أذكى وأسرع كاتب وصية في ماليزيا</p>
           </div>
         </div>
         <div class="footer-socials">
@@ -310,9 +308,9 @@
         <div class="footer-company">
           <h4>WASIATKU FINTECH SDN BHD</h4>
           <p class="co-reg">(202301043968)</p>
-          <div class="contact-item"><span>&#128222;</span><span>+6018-220 9929</span></div>
-          <div class="contact-item"><span>&#9993;&#65039;</span><span>enquiry@wasiatku.com.my</span></div>
-          <div class="contact-item"><span>&#128205;</span><span>B-2-19, Blok Bougainvilia, 10 Boulevard, Lebuhraya Sprint, PJU6A, 47400 Petaling Jaya, Selangor, Malaysia</span></div>
+          <div class="contact-item"><span>📞</span><span>+6018-220 9929</span></div>
+          <div class="contact-item"><span>✉️</span><span>enquiry@wasiatku.com.my</span></div>
+          <div class="contact-item"><span>📍</span><span>B-2-19, Blok Bougainvilia, 10 Boulevard, Lebuhraya Sprint, PJU6A, 47400 Petaling Jaya, Selangor, Malaysia</span></div>
         </div>
         <div class="footer-nav-cols">
           <div class="footer-col">
@@ -343,51 +341,27 @@
       </div>
       <div class="footer-divider"></div>
       <div class="footer-bottom">
-        <p>&#169; 2023 &ndash; 2026 All rights reserved | WasiatKu.com.my</p>
-        <p class="footer-bottom-ar">&#1580;&#1605;&#1610;&#1593; &#1575;&#1604;&#1581;&#1602;&#1608;&#1602; &#1605;&#1581;&#1601;&#1608;&#1592;&#1577;</p>
+        <p>© 2023 – 2026 All rights reserved | WasiatKu.com.my</p>
+        <p class="footer-bottom-ar">جميع الحقوق محفوظة</p>
       </div>
     </div>
   </footer>
 
-  <!-- WHATSAPP -->
+  <!-- ═══ FLOATING ELEMENTS ═══ -->
   <a href="https://wa.me/60182209929" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
     <div class="wa-bubble">
-      <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.555 4.122 1.528 5.855L.057 23.887l6.186-1.624A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.938a9.92 9.92 0 01-5.058-1.384l-.362-.215-3.754.984 1.003-3.657-.236-.375A9.938 9.938 0 012.062 12C2.062 6.526 6.526 2.062 12 2.062S21.938 6.526 21.938 12 17.474 21.938 12 21.938z"/></svg>
+      <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.555 4.122 1.528 5.855L.057 23.887l6.186-1.624A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.938a9.92 9.92 0 01-5.058-1.384l-.362-.215-3.754.984 1.003-3.657-.236-.375A9.938 9.938 0 012.062 12C2.062 6.526 6.526 2.062 12 2.062S21.938 6.526 21.938 12 17.474 21.938 12 21.938z"/>
+      </svg>
       <span>Chat dengan kami</span>
     </div>
     <img src="images/suri.gif" alt="WasiatKu Helper" class="mascot-img"/>
   </a>
-  <button class="scroll-top" id="scrollTop" aria-label="Kembali ke atas">&#8593;</button>
+  <button class="scroll-top" id="scrollTop" aria-label="Kembali ke atas">↑</button>
+  <div class="toast" id="toast"></div>
 
-  <script>
-    window.addEventListener('scroll', function () {
-      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
-      document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 400);
-    }, { passive: true });
-
-    document.getElementById('scrollTop').addEventListener('click', function () {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    function toggleDropdown(e) {
-      e.stopPropagation();
-      document.getElementById('navDropdown').classList.toggle('open');
-    }
-    document.addEventListener('click', function () {
-      var d = document.getElementById('navDropdown');
-      if (d) d.classList.remove('open');
-    });
-
-    document.querySelectorAll('.toc-list a').forEach(function (a) {
-      a.addEventListener('click', function (e) {
-        var target = document.querySelector(this.getAttribute('href'));
-        if (!target) return;
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        document.querySelectorAll('.toc-list a').forEach(function (l) { l.classList.remove('active-toc'); });
-        this.classList.add('active-toc');
-      });
-    });
-  </script>
+  <script src="js/script.js"></script>
+  <script src="js/terma_penggunaan.js"></script>
 </body>
 </html>

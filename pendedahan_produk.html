@@ -10,184 +10,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Amiri:ital,wght@0,400;0,700;1,400&family=Roboto+Slab:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/terma_syarat.css">
-  <style>
-    /* ── PDS-specific extras ── */
-
-    /* Quick-facts banner strip */
-    .pds-facts-strip {
-      background: linear-gradient(135deg, #1a3a28, #0d2233);
-      padding: 40px 5%;
-      border-bottom: 3px solid var(--gold);
-    }
-    .pds-facts-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0;
-    }
-    .pds-fact {
-      text-align: center;
-      padding: 10px 20px;
-      border-right: 1px solid rgba(255,255,255,0.1);
-    }
-    .pds-fact:last-child { border-right: none; }
-    .pds-fact-icon  { font-size: 1.6rem; margin-bottom: 8px; display: block; }
-    .pds-fact-value {
-      font-family: var(--font-h);
-      font-size: 1.3rem;
-      color: var(--gold-light);
-      display: block;
-      margin-bottom: 4px;
-      line-height: 1;
-    }
-    .pds-fact-label {
-      font-size: 0.72rem;
-      color: rgba(255,255,255,0.55);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    /* Step flow for subscription process */
-    .steps-flow {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      margin: 6px 0;
-    }
-    .step-flow-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      position: relative;
-    }
-    .step-flow-item:not(:last-child)::before {
-      content: '';
-      position: absolute;
-      left: 15px;
-      top: 34px;
-      width: 2px;
-      height: calc(100% - 10px);
-      background: linear-gradient(180deg, #2d7a4f, rgba(45,122,79,0.15));
-    }
-    .step-flow-num {
-      width: 32px; height: 32px;
-      background: linear-gradient(135deg, #2d7a4f, #1e5c3e);
-      color: white;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--font-h);
-      font-size: 0.72rem;
-      font-weight: 700;
-      flex-shrink: 0;
-      margin-top: 2px;
-      position: relative; z-index: 1;
-    }
-    .step-flow-text {
-      padding: 4px 0 20px;
-      font-size: 0.9rem;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-    .step-flow-text strong { color: var(--navy); }
-
-    /* Two-col grid for Q&A sections */
-    .qa-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-top: 8px;
-    }
-    .qa-card {
-      background: white;
-      border: 1px solid rgba(0,0,0,0.07);
-      border-radius: 12px;
-      padding: 20px 22px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.04);
-      transition: transform 0.25s, box-shadow 0.25s;
-    }
-    .qa-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.09);
-    }
-    .qa-card-q {
-      font-family: var(--font-h);
-      font-size: 0.78rem;
-      color: #2d7a4f;
-      margin-bottom: 8px;
-      letter-spacing: 0.02em;
-    }
-    .qa-card-a {
-      font-size: 0.88rem;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-    .qa-card-a strong { color: var(--navy); }
-
-    /* Validity notice */
-    .validity-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(219,158,48,0.1);
-      border: 1px solid rgba(219,158,48,0.25);
-      color: #7a5a00;
-      font-size: 0.78rem;
-      font-weight: 600;
-      padding: 8px 18px;
-      border-radius: 50px;
-      margin-bottom: 28px;
-    }
-
-    /* Contact card at bottom */
-    .pds-contact-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-      margin-top: 20px;
-    }
-    .pds-contact-item {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 10px;
-      padding: 16px 18px;
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-    }
-    .pds-contact-icon {
-      font-size: 1.1rem;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-    .pds-contact-text a,
-    .pds-contact-text span {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.85);
-      text-decoration: none;
-      display: block;
-      line-height: 1.5;
-    }
-    .pds-contact-text a:hover { color: var(--gold-light); }
-    .pds-contact-text small {
-      font-size: 0.72rem;
-      color: rgba(255,255,255,0.45);
-      display: block;
-      margin-top: 2px;
-    }
-
-    @media (max-width: 768px) {
-      .pds-facts-inner { grid-template-columns: 1fr 1fr; }
-      .pds-fact { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
-      .pds-fact:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.1); }
-      .qa-grid { grid-template-columns: 1fr; }
-      .pds-contact-grid { grid-template-columns: 1fr; }
-    }
-  </style>
+  <link rel="stylesheet" href="css/pendedahan_produk.css">
 </head>
 <body>
 
-  <!-- NAVBAR -->
+  <!-- ═══ NAVBAR ═══ -->
   <nav id="navbar" class="scrolled">
     <div class="nav-logo-wrap">
       <a href="index.html" class="logo">
@@ -217,7 +44,7 @@
     </div>
   </nav>
 
-  <!-- HERO -->
+  <!-- ═══ HERO ═══ -->
   <section class="inner-page-hero">
     <div class="glow-orb glow-orb-1"></div>
     <div class="glow-orb glow-orb-2"></div>
@@ -229,7 +56,7 @@
     </div>
   </section>
 
-  <!-- QUICK FACTS STRIP -->
+  <!-- ═══ QUICK FACTS STRIP ═══ -->
   <div class="pds-facts-strip">
     <div class="pds-facts-inner">
       <div class="pds-fact">
@@ -255,7 +82,7 @@
     </div>
   </div>
 
-  <!-- LEGAL LAYOUT -->
+  <!-- ═══ LEGAL LAYOUT ═══ -->
   <div class="legal-layout">
 
     <!-- SIDEBAR TOC -->
@@ -297,33 +124,33 @@
         <p>Sila baca dengan teliti dan jika perlu, dapatkan nasihat undang-undang bebas sebelum menggunakan perkhidmatan ini. Dokumen ini memberikan maklumat penting tentang produk wasiat dalam talian kami.</p>
       </div>
 
-      <!-- 1 -->
+      <!-- Section 1 -->
       <section class="legal-section" id="pds1">
         <div class="legal-section-header">
           <div class="section-num">1</div>
           <h2>Siapa yang Menawarkan Perkhidmatan Ini?</h2>
         </div>
         <p>Perkhidmatan Penulisan Wasiat Dalam Talian (&ldquo;Perkhidmatan&rdquo;) disediakan oleh <strong>WASIATKU FINTECH SDN BHD</strong> (SSM-202301043968) (&ldquo;WFSB&rdquo;), sebuah syarikat yang ditubuhkan di Malaysia dan tertakluk kepada undang-undang Malaysia.</p>
-        <div style="margin-top:16px; display:flex; align-items:center; gap:16px; background:white; border:1px solid rgba(0,0,0,0.07); border-radius:12px; padding:18px 22px; box-shadow:0 3px 12px rgba(0,0,0,0.04);">
-          <div style="font-size:2.2rem; flex-shrink:0;">&#127981;</div>
-          <div>
-            <div style="font-family:var(--font-h); font-size:0.82rem; color:var(--navy); margin-bottom:3px;">WASIATKU FINTECH SDN BHD</div>
-            <div style="font-size:0.8rem; color:var(--muted);">SSM No. 202301043968 &nbsp;|&nbsp; Ditubuhkan di Malaysia</div>
+        <div class="company-card">
+          <div class="company-icon">&#127981;</div>
+          <div class="company-info">
+            <div class="company-name">WASIATKU FINTECH SDN BHD</div>
+            <div class="company-reg">SSM No. 202301043968 &nbsp;|&nbsp; Ditubuhkan di Malaysia</div>
           </div>
         </div>
       </section>
 
-      <!-- 2 -->
+      <!-- Section 2 -->
       <section class="legal-section" id="pds2">
         <div class="legal-section-header">
           <div class="section-num">2</div>
           <h2>Apakah Perkhidmatan Ini?</h2>
         </div>
-        <p>Anda boleh menulis Wasiat dalam talian dengan mengakses Laman Web kami di <a href="https://www.wasiatku.com.my" target="_blank" rel="noopener" style="color:#2d7a4f;">www.wasiatku.com.my</a> dan mengikuti arahan langkah demi langkah yang disediakan.</p>
+        <p>Anda boleh menulis Wasiat dalam talian dengan mengakses Laman Web kami di <a href="https://www.wasiatku.com.my" target="_blank" rel="noopener" class="text-link">www.wasiatku.com.my</a> dan mengikuti arahan langkah demi langkah yang disediakan.</p>
         <p>Selepas selesai dan pembayaran dibuat dengan berjaya melalui gerbang pembayaran yang diluluskan, salinan bercetak Wasiat yang <strong>sah di sisi undang-undang</strong> akan dijana dan dihantar melalui perkhidmatan kurier berdaftar kepada anda untuk ditandatangani mengikut keperluan <strong>Akta Wasiat 1959</strong>.</p>
       </section>
 
-      <!-- 3 -->
+      <!-- Section 3 -->
       <section class="legal-section" id="pds3">
         <div class="legal-section-header">
           <div class="section-num">3</div>
@@ -336,13 +163,13 @@
           <li><span class="al-marker">&#10022;</span><span>Hendaklah mematuhi prinsip <strong>Faraid</strong> bagi memastikan hak waris terpelihara; dan</span></li>
           <li><span class="al-marker">&#10022;</span><span>Hanya boleh melibatkan sehingga <strong>satu pertiga (1/3)</strong> daripada jumlah keseluruhan harta pusaka selepas ditolak hutang dan tanggungan, kecuali jika semua waris yang berhak bersetuju.</span></li>
         </ul>
-        <div class="callout info" style="margin-top:16px;">
+        <div class="callout info">
           <span class="callout-icon">&#9878;&#65039;</span>
           <span>Wasiat Islam <strong>tidak tertakluk</strong> di bawah Akta Wasiat 1959, kerana akta tersebut hanya terpakai kepada individu bukan Islam. Setiap pelaksanaan Wasiat Islam masih memerlukan <strong>pengesahan Mahkamah Syariah</strong> bagi menentukan kesahan Wasiat serta bahagian waris mengikut hukum Faraid. Selepas itu, Wasi perlu mendapatkan <strong>Geran Probet</strong> daripada Mahkamah Tinggi Sivil bagi membolehkan pemindahan aset dilakukan secara sah.</span>
         </div>
       </section>
 
-      <!-- 4 -->
+      <!-- Section 4 -->
       <section class="legal-section" id="pds4">
         <div class="legal-section-header">
           <div class="section-num">4</div>
@@ -355,25 +182,21 @@
           <li><span class="al-marker">&#10003;</span><span>Berumur sekurang-kurangnya <strong>18 tahun</strong> di Semenanjung Malaysia dan Sarawak, serta <strong>21 tahun ke atas</strong> di Sabah</span></li>
           <li><span class="al-marker">&#10003;</span><span>Mempunyai keupayaan memahami sifat, hukum, serta kesan pembuatan Wasiat menurut hukum Syariah</span></li>
         </ul>
-        <div class="callout warning" style="margin-top:14px;">
+        <div class="callout warning">
           <span class="callout-icon">&#9888;&#65039;</span>
           <span>Wasiat bagi orang Islam hendaklah mematuhi prinsip Faraid &mdash; pembahagian harta kepada waris tidak boleh melebihi <strong>satu pertiga (1/3)</strong> daripada keseluruhan harta selepas ditolak hutang dan tanggungan, kecuali dengan persetujuan semua waris yang berhak.</span>
         </div>
       </section>
 
-      <!-- 5 -->
+      <!-- Section 5 -->
       <section class="legal-section" id="pds5">
         <div class="legal-section-header">
           <div class="section-num">5</div>
           <h2>Apakah Yuran dan Caj?</h2>
         </div>
         <p>Bayaran dikenakan <strong>sekali sahaja</strong> berdasarkan pakej pilihan anda sebagaimana yang dinyatakan di laman web rasmi kami.</p>
-        <div style="display:flex; gap:14px; margin:16px 0; flex-wrap:wrap;">
-          <a href="harga.html" style="display:inline-flex; align-items:center; gap:8px; background:linear-gradient(135deg,#2d7a4f,#1e5c3e); color:white; padding:12px 24px; border-radius:8px; font-family:var(--font-h); font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; text-decoration:none; transition:all 0.3s;"
-             onmouseover="this.style.opacity='0.88'; this.style.transform='translateY(-2px)'"
-             onmouseout="this.style.opacity='1'; this.style.transform='translateY(0)'">
-            &#128197; Lihat Semua Pakej &amp; Harga
-          </a>
+        <div class="btn-wrapper">
+          <a href="harga.html" class="btn-pricing">&#128197; Lihat Semua Pakej &amp; Harga</a>
         </div>
         <ul class="clause-list">
           <li><span class="cl-num">5.1</span><span>Semua bayaran <strong>tidak termasuk</strong> Cukai Jualan dan Perkhidmatan (SST).</span></li>
@@ -381,7 +204,7 @@
         </ul>
       </section>
 
-      <!-- 6 -->
+      <!-- Section 6 -->
       <section class="legal-section" id="pds6">
         <div class="legal-section-header">
           <div class="section-num">6</div>
@@ -395,7 +218,7 @@
         </ul>
       </section>
 
-      <!-- 7 -->
+      <!-- Section 7 -->
       <section class="legal-section" id="pds7">
         <div class="legal-section-header">
           <div class="section-num">7</div>
@@ -407,7 +230,7 @@
         </div>
       </section>
 
-      <!-- 8 -->
+      <!-- Section 8 -->
       <section class="legal-section" id="pds8">
         <div class="legal-section-header">
           <div class="section-num">8</div>
@@ -419,7 +242,7 @@
         </ul>
       </section>
 
-      <!-- 9 -->
+      <!-- Section 9 -->
       <section class="legal-section" id="pds9">
         <div class="legal-section-header">
           <div class="section-num">9</div>
@@ -431,7 +254,7 @@
         </ul>
       </section>
 
-      <!-- 10 -->
+      <!-- Section 10 -->
       <section class="legal-section" id="pds10">
         <div class="legal-section-header">
           <div class="section-num">10</div>
@@ -441,7 +264,7 @@
         <div class="steps-flow">
           <div class="step-flow-item">
             <div class="step-flow-num">1</div>
-            <div class="step-flow-text"><strong>Cipta akaun</strong> dan log masuk ke laman web rasmi kami di <a href="https://www.wasiatku.com.my" style="color:#2d7a4f;">wasiatku.com.my</a></div>
+            <div class="step-flow-text"><strong>Cipta akaun</strong> dan log masuk ke laman web rasmi kami di <a href="https://www.wasiatku.com.my" class="text-link">wasiatku.com.my</a></div>
           </div>
           <div class="step-flow-item">
             <div class="step-flow-num">2</div>
@@ -462,14 +285,13 @@
         </div>
       </section>
 
-      <!-- 11 - 19: FAQ Grid -->
+      <!-- Section 11-19: FAQ Grid -->
       <section class="legal-section" id="pds-qa">
         <div class="legal-section-header">
           <div class="section-num">&#9733;</div>
           <h2>Soalan Lazim Pendedahan Produk</h2>
         </div>
         <div class="qa-grid">
-
           <div class="qa-card">
             <div class="qa-card-q">11. Siapa Boleh Menjadi Wasi?</div>
             <div class="qa-card-a">Sesiapa yang berumur sekurang-kurangnya <strong>18 tahun</strong>, waras fikiran, bersetuju dilantik dan <strong>tidak disabitkan kesalahan jenayah</strong> yang melibatkan ketidakjujuran atau penyelewengan.</div>
@@ -510,26 +332,25 @@
             <div class="qa-card-a">Anda mesti memaklumkan WFSB secara <strong>bertulis</strong> mengenai sebarang perubahan. Kegagalan berbuat demikian boleh menyebabkan <strong>kelewatan penghantaran</strong> atau penyampaian Wasiat.</div>
           </div>
 
-          <div class="qa-card" style="grid-column: 1 / -1;">
+          <div class="qa-card full-width">
             <div class="qa-card-q">19. Bilakah Saya Menerima Salinan Wasiat Saya?</div>
             <div class="qa-card-a">
               WFSB akan menyediakan salinan elektronik (PDF) dalam tempoh <strong>24 jam</strong> selepas pengesahan pembayaran diterima. Jika anda memilih pakej premium, salinan bercetak akan dihantar dalam masa <strong>lima (5) hari bekerja</strong>.
             </div>
           </div>
-
         </div>
       </section>
 
-      <!-- 20 -->
+      <!-- Section 20 -->
       <section class="legal-section" id="pds20">
         <div class="legal-section-header">
           <div class="section-num">20</div>
           <h2>Di Mana Saya Boleh Mendapatkan Bantuan?</h2>
         </div>
-        <p>Untuk pertanyaan lanjut, sila layari laman web rasmi kami di <a href="https://www.wasiatku.com.my" target="_blank" rel="noopener" style="color:#2d7a4f; font-weight:600;">www.wasiatku.com.my</a> atau hubungi kami melalui saluran berikut:</p>
+        <p>Untuk pertanyaan lanjut, sila layari laman web rasmi kami di <a href="https://www.wasiatku.com.my" target="_blank" rel="noopener" class="text-link font-bold">www.wasiatku.com.my</a> atau hubungi kami melalui saluran berikut:</p>
 
-        <div style="margin-top:16px; background:linear-gradient(135deg,var(--navy),#1a3a2a); border-radius:16px; padding:28px 30px;">
-          <div style="font-family:var(--font-h); font-size:0.78rem; color:var(--gold-light); margin-bottom:20px; text-transform:uppercase; letter-spacing:0.1em;">&#127981; WASIATKU FINTECH SDN BHD (202301043968)</div>
+        <div class="contact-card-container">
+          <div class="contact-header">&#127981; WASIATKU FINTECH SDN BHD (202301043968)</div>
           <div class="pds-contact-grid">
             <div class="pds-contact-item">
               <span class="pds-contact-icon">&#128205;</span>
@@ -560,12 +381,8 @@
               </div>
             </div>
           </div>
-          <div style="margin-top:22px; text-align:right;">
-            <a href="hubungi_kami.html" style="display:inline-block; background:var(--gold); color:var(--navy); padding:12px 26px; border-radius:8px; font-family:var(--font-h); font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; text-decoration:none;"
-               onmouseover="this.style.background='#efb956'; this.style.transform='translateY(-2px)'"
-               onmouseout="this.style.background='#db9e30'; this.style.transform='translateY(0)'">
-              Hubungi Kami &#8594;
-            </a>
+          <div class="contact-footer">
+            <a href="hubungi_kami.html" class="btn-contact">Hubungi Kami &#8594;</a>
           </div>
         </div>
       </section>
@@ -573,14 +390,14 @@
     </main>
   </div>
 
-  <!-- GREEN CTA -->
+  <!-- ═══ GREEN CTA ═══ -->
   <section class="green-strip">
     <h2>Faham Produk Kami? Mula Tulis Wasiat Anda</h2>
     <p>Platform yang telus, sah di sisi undang-undang, dan mudah digunakan oleh semua lapisan masyarakat.</p>
     <a href="https://app.mysmartwills.com/?item_id=80" target="_blank" rel="noopener" class="btn-gold">Tulis Wasiat Sekarang &#8594;</a>
   </section>
 
-  <!-- FOOTER -->
+  <!-- ═══ FOOTER ═══ -->
   <footer>
     <div class="footer-bg-img" style="background-image:url('images/hero-bg.jpg');"></div>
     <div class="footer-overlay"></div>
@@ -590,7 +407,7 @@
           <img src="images/slogan.png" alt="SmartWills WasiatKu" class="footer-logo">
           <div class="footer-brand-text">
             <p class="footer-tagline">Your smartest &amp; fastest online will writer</p>
-            <p class="footer-tagline-ar">&#1571;&#1584;&#1603;&#1609; &#1608;&#1571;&#1587;&#1585;&#1593; &#1603;&#1575;&#1578;&#1576; &#1608;&#1589;&#1610;&#1577; &#1601;&#1610; &#1605;&#1575;&#1604;&#1610;&#1586;&#1610;&#1575;</p>
+            <p class="footer-tagline-ar">أذكى وأسرع كاتب وصية في ماليزيا</p>
           </div>
         </div>
         <div class="footer-socials">
@@ -610,9 +427,9 @@
         <div class="footer-company">
           <h4>WASIATKU FINTECH SDN BHD</h4>
           <p class="co-reg">(202301043968)</p>
-          <div class="contact-item"><span>&#128222;</span><span>+6018-220 9929</span></div>
-          <div class="contact-item"><span>&#9993;&#65039;</span><span>enquiry@wasiatku.com.my</span></div>
-          <div class="contact-item"><span>&#128205;</span><span>B-2-19, Blok Bougainvilia, 10 Boulevard, Lebuhraya Sprint, PJU6A, 47400 Petaling Jaya, Selangor, Malaysia</span></div>
+          <div class="contact-item"><span>📞</span><span>+6018-220 9929</span></div>
+          <div class="contact-item"><span>✉️</span><span>enquiry@wasiatku.com.my</span></div>
+          <div class="contact-item"><span>📍</span><span>B-2-19, Blok Bougainvilia, 10 Boulevard, Lebuhraya Sprint, PJU6A, 47400 Petaling Jaya, Selangor, Malaysia</span></div>
         </div>
         <div class="footer-nav-cols">
           <div class="footer-col">
@@ -643,51 +460,27 @@
       </div>
       <div class="footer-divider"></div>
       <div class="footer-bottom">
-        <p>&#169; 2023 &ndash; 2026 All rights reserved | WasiatKu.com.my</p>
-        <p class="footer-bottom-ar">&#1580;&#1605;&#1610;&#1593; &#1575;&#1604;&#1581;&#1602;&#1608;&#1602; &#1605;&#1581;&#1601;&#1608;&#1592;&#1577;</p>
+        <p>© 2023 &ndash; 2026 All rights reserved | WasiatKu.com.my</p>
+        <p class="footer-bottom-ar">جميع الحقوق محفوظة</p>
       </div>
     </div>
   </footer>
 
-  <!-- WHATSAPP -->
+  <!-- ═══ FLOATING ELEMENTS ═══ -->
   <a href="https://wa.me/60182209929" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
     <div class="wa-bubble">
-      <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.555 4.122 1.528 5.855L.057 23.887l6.186-1.624A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.938a9.92 9.92 0 01-5.058-1.384l-.362-.215-3.754.984 1.003-3.657-.236-.375A9.938 9.938 0 012.062 12C2.062 6.526 6.526 2.062 12 2.062S21.938 6.526 21.938 12 17.474 21.938 12 21.938z"/></svg>
+      <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.555 4.122 1.528 5.855L.057 23.887l6.186-1.624A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.938a9.92 9.92 0 01-5.058-1.384l-.362-.215-3.754.984 1.003-3.657-.236-.375A9.938 9.938 0 012.062 12C2.062 6.526 6.526 2.062 12 2.062S21.938 6.526 21.938 12 17.474 21.938 12 21.938z"/>
+      </svg>
       <span>Chat dengan kami</span>
     </div>
     <img src="images/suri.gif" alt="WasiatKu Helper" class="mascot-img"/>
   </a>
-  <button class="scroll-top" id="scrollTop" aria-label="Kembali ke atas">&#8593;</button>
+  <button class="scroll-top" id="scrollTop" aria-label="Kembali ke atas">↑</button>
+  <div class="toast" id="toast"></div>
 
-  <script>
-    window.addEventListener('scroll', function () {
-      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
-      document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 400);
-    }, { passive: true });
-
-    document.getElementById('scrollTop').addEventListener('click', function () {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    function toggleDropdown(e) {
-      e.stopPropagation();
-      document.getElementById('navDropdown').classList.toggle('open');
-    }
-    document.addEventListener('click', function () {
-      var d = document.getElementById('navDropdown');
-      if (d) d.classList.remove('open');
-    });
-
-    document.querySelectorAll('.toc-list a').forEach(function (a) {
-      a.addEventListener('click', function (e) {
-        var target = document.querySelector(this.getAttribute('href'));
-        if (!target) return;
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        document.querySelectorAll('.toc-list a').forEach(function (l) { l.classList.remove('active-toc'); });
-        this.classList.add('active-toc');
-      });
-    });
-  </script>
+  <script src="js/script.js"></script>
+  <script src="js/pendedahan_produk.js"></script>
 </body>
 </html>
