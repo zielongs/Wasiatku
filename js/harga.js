@@ -263,3 +263,181 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(card);
     });
 });
+
+/**
+ * SmartWills WasiatKu — harga.js
+ * Page-specific JavaScript for Harga & Pakej
+ */
+
+// Wait for DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+  
+  // Initialize fade-in animations
+  initFadeInAnimations();
+  
+  // Initialize dropdown menu
+  initDropdownMenu();
+  
+  // Initialize scroll to top button
+  initScrollToTop();
+  
+  // Initialize navbar scroll effect
+  initNavbarScroll();
+  
+});
+
+/**
+ * Initialize fade-in animations using Intersection Observer
+ */
+function initFadeInAnimations() {
+  const fadeElements = document.querySelectorAll('.fade-in');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        // Optional: unobserve after animation to improve performance
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { 
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px' // Slight offset for better timing
+  });
+  
+  fadeElements.forEach(el => observer.observe(el));
+}
+
+/**
+ * Initialize dropdown menu functionality
+ */
+function initDropdownMenu() {
+  // Make toggleDropdown available globally if needed by inline onclick
+  window.toggleDropdown = function(event) {
+    event.stopPropagation();
+    const dropdown = document.getElementById('navDropdown');
+    if (dropdown) {
+      dropdown.classList.toggle('open');
+    }
+  };
+  
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function() {
+    const dropdown = document.getElementById('navDropdown');
+    if (dropdown) {
+      dropdown.classList.remove('open');
+    }
+  });
+  
+  // Prevent dropdown from closing when clicking inside
+  const dropdownMenu = document.getElementById('navDropdown');
+  if (dropdownMenu) {
+    dropdownMenu.addEventListener('click', function(e) {
+      e.stopPropagation();
+    });
+  }
+}
+
+/**
+ * Initialize scroll to top button functionality
+ */
+function initScrollToTop() {
+  const scrollBtn = document.getElementById('scrollTop');
+  
+  if (!scrollBtn) return;
+  
+  // Show/hide button based on scroll position
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 400) {
+      scrollBtn.classList.add('visible');
+    } else {
+      scrollBtn.classList.remove('visible');
+    }
+  });
+  
+  // Smooth scroll to top on click
+  scrollBtn.addEventListener('click', function() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+}
+
+/**
+ * Initialize navbar scroll effect
+ */
+function initNavbarScroll() {
+  const navbar = document.getElementById('navbar');
+  
+  if (!navbar) return;
+  
+  // Add scrolled class based on initial scroll position
+  if (window.scrollY > 60) {
+    navbar.classList.add('scrolled');
+  }
+  
+  // Update scrolled class on scroll
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 60) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+}
+
+/**
+ * Optional: Add hover effects for pricing cards
+ * Enhanced interactivity
+ */
+function initCardHoverEffects() {
+  const cards = document.querySelectorAll('.pricing-card');
+  
+  cards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      // Optional: Add additional hover effects
+      this.style.transition = 'transform 0.35s ease, box-shadow 0.35s ease';
+    });
+  });
+}
+
+/**
+ * Optional: Track button clicks for analytics
+ * Can be extended with actual analytics implementation
+ */
+function trackButtonClick(buttonName, planName) {
+  console.log(`Button clicked: ${buttonName} - Plan: ${planName}`);
+  // Add analytics tracking here if needed
+  // Example: ga('send', 'event', 'Pricing', 'click', planName);
+}
+
+// Initialize card hover effects
+document.addEventListener('DOMContentLoaded', function() {
+  initCardHoverEffects();
+  
+  // Track pricing button clicks
+  const pricingButtons = document.querySelectorAll('.pricing-footer a');
+  pricingButtons.forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      const card = this.closest('.pricing-card');
+      const planName = card ? card.querySelector('.pricing-header h3')?.innerText || 'Unknown' : 'Unknown';
+      trackButtonClick('Select Plan', planName);
+    });
+  });
+});
+
+/**
+ * Toast notification function (if needed)
+ */
+function showToast(message, type = 'success') {
+  const toast = document.getElementById('toast');
+  if (!toast) return;
+  
+  toast.textContent = message;
+  toast.className = `toast show ${type}`;
+  
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, 3000);
+}
