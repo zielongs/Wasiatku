@@ -1,0 +1,251 @@
+/* ═══════════════════════════════════════
+   SmartWills WasiatKu — terma_penggunaan.css
+   Page-specific styles for Terms of Use
+═══════════════════════════════════════ */
+
+/* ─────────────────────────────────────
+   REFUND INFO BOX
+   ───────────────────────────────────── */
+.refund-info-box {
+  margin-top: 18px;
+  background: white;
+  border: 1px solid rgba(219, 158, 48, 0.2);
+  border-radius: 12px;
+  padding: 22px 26px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.refund-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.refund-title {
+  font-family: var(--font-h);
+  font-size: 0.8rem;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.refund-amount {
+  font-family: var(--font-h);
+  font-size: 1.6rem;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.refund-note {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+/* ─────────────────────────────────────
+   CONTACT BLOCK
+   ───────────────────────────────────── */
+.contact-block {
+  margin-top: 24px;
+  background: linear-gradient(135deg, var(--navy), #1a3a2a);
+  border-radius: 14px;
+  padding: 28px 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact-block-title {
+  font-family: var(--font-h);
+  font-size: 0.75rem;
+  color: var(--gold-light);
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.contact-block-phone,
+.contact-block-email {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.88rem;
+  margin-bottom: 10px;
+}
+
+.contact-block-phone a,
+.contact-block-email a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contact-block-phone a:hover,
+.contact-block-email a:hover {
+  color: var(--gold-light);
+}
+
+.contact-block-btn {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--navy);
+  padding: 12px 26px;
+  border-radius: 8px;
+  font-family: var(--font-h);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.contact-block-btn:hover {
+  background: #efb956;
+  transform: translateY(-2px);
+}
+
+/* ─────────────────────────────────────
+   CALL OUT STYLES (extending from terma_syarat.css)
+   ───────────────────────────────────── */
+.callout {
+  margin-top: 16px;
+  padding: 18px 22px;
+  border-radius: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.callout.info {
+  background: rgba(87, 166, 143, 0.08);
+  border-left: 4px solid var(--teal);
+  color: var(--muted);
+}
+
+.callout.warning {
+  background: rgba(219, 158, 48, 0.08);
+  border-left: 4px solid var(--gold);
+  color: var(--muted);
+}
+
+.callout.danger {
+  background: rgba(220, 53, 69, 0.08);
+  border-left: 4px solid #dc3545;
+  color: var(--muted);
+}
+
+.callout-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ─────────────────────────────────────
+   ALPHA LIST
+   ───────────────────────────────────── */
+.alpha-list {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+}
+
+.alpha-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 8px 0;
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.al-marker {
+  flex-shrink: 0;
+  font-size: 0.9rem;
+  color: #2d7a4f;
+  margin-top: 2px;
+}
+
+/* ─────────────────────────────────────
+   CLAUSE LIST
+   ───────────────────────────────────── */
+.clause-list {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+}
+
+.clause-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 8px 0;
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.7;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.clause-list li:last-child {
+  border-bottom: none;
+}
+
+.cl-num {
+  font-weight: 700;
+  color: var(--teal);
+  min-width: 45px;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+/* ─────────────────────────────────────
+   RESPONSIVE STYLES
+   ───────────────────────────────────── */
+@media (max-width: 768px) {
+  .refund-info-box {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .contact-block {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .contact-block-phone,
+  .contact-block-email {
+    justify-content: center;
+  }
+  
+  .callout {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .refund-amount {
+    font-size: 1.3rem;
+  }
+  
+  .refund-title {
+    font-size: 0.75rem;
+  }
+  
+  .contact-block {
+    padding: 20px;
+  }
+  
+  .contact-block-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
