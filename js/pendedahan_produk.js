@@ -143,30 +143,45 @@ function initNavbarScroll() {
 
 /**
  * Initialize dropdown menu
+ * Fixed to prevent quick disappearance and follow main menu styling
  */
 function initDropdownMenu() {
   // Make toggleDropdown available globally
   window.toggleDropdown = function(event) {
+    event.preventDefault();
     event.stopPropagation();
-    const dropdown = document.getElementById('navDropdown');
+    const container = event.target.closest('.dropdown-container');
+    const dropdown = container?.querySelector('.nav-dropdown');
     if (dropdown) {
       dropdown.classList.toggle('open');
     }
   };
   
-  // Close dropdown when clicking outside
-  document.addEventListener('click', function() {
-    const dropdown = document.getElementById('navDropdown');
-    if (dropdown) {
-      dropdown.classList.remove('open');
+  // Close dropdown only when clicking outside the dropdown container
+  document.addEventListener('click', function(e) {
+    const dropdownContainer = document.querySelector('.dropdown-container');
+    if (dropdownContainer && !dropdownContainer.contains(e.target)) {
+      const dropdown = document.getElementById('navDropdown');
+      if (dropdown) {
+        dropdown.classList.remove('open');
+      }
     }
   });
   
-  // Prevent dropdown from closing when clicking inside
+  // Allow interaction with dropdown items without closing
   const dropdownMenu = document.getElementById('navDropdown');
   if (dropdownMenu) {
     dropdownMenu.addEventListener('click', function(e) {
-      e.stopPropagation();
+      // Only close if clicking on a link (navigation)
+      if (e.target.tagName === 'A') {
+        e.stopPropagation();
+        // Close after navigation
+        setTimeout(() => {
+          this.classList.remove('open');
+        }, 50);
+      } else {
+        e.stopPropagation();
+      }
     });
   }
 }

@@ -75,13 +75,40 @@ document.addEventListener('click', e => {
 // ── DROPDOWN TOGGLE ───────────────────
 function toggleDropdown(e) {
   e.preventDefault();
+  e.stopPropagation();
   const container = e.target.closest('.dropdown-container');
   const menu = container?.querySelector('.nav-dropdown');
   if (menu) {
-    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    menu.classList.toggle('open');
   }
 }
 window.toggleDropdown = toggleDropdown;
+
+// Close dropdown when clicking outside
+document.addEventListener('click', function(e) {
+  const dropdownContainer = document.querySelector('.dropdown-container');
+  if (dropdownContainer && !dropdownContainer.contains(e.target)) {
+    const dropdown = document.querySelector('.nav-dropdown');
+    if (dropdown) {
+      dropdown.classList.remove('open');
+    }
+  }
+});
+
+// Prevent dropdown from closing when interacting with items
+const dropdownMenuItems = document.querySelectorAll('.nav-dropdown a');
+dropdownMenuItems.forEach(item => {
+  item.addEventListener('click', function(e) {
+    e.stopPropagation();
+    // Close after short delay to allow navigation
+    setTimeout(() => {
+      const dropdown = document.querySelector('.nav-dropdown');
+      if (dropdown) {
+        dropdown.classList.remove('open');
+      }
+    }, 50);
+  });
+});
 
 // ── FADE-IN OBSERVER ──────────────────
 const fadeObs = new IntersectionObserver(entries => {
