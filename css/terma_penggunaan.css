@@ -110,7 +110,7 @@
 }
 
 /* ─────────────────────────────────────
-   CALL OUT STYLES (extending from terma_syarat.css)
+   CALL OUT STYLES
    ───────────────────────────────────── */
 .callout {
   margin-top: 16px;
@@ -124,8 +124,8 @@
 }
 
 .callout.info {
-  background: rgba(87, 166, 143, 0.08);
-  border-left: 4px solid var(--teal);
+  background: rgba(45, 122, 79, 0.08);
+  border-left: 4px solid #2d7a4f;
   color: var(--muted);
 }
 
@@ -206,6 +206,63 @@
 }
 
 /* ─────────────────────────────────────
+   GREEN CTA STRIP
+   ───────────────────────────────────── */
+.green-strip {
+  background: linear-gradient(135deg, #1e5c3e 0%, #2d7a4f 50%, var(--teal-dark) 100%);
+  padding: 60px 5%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.green-strip::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.06) 0%, transparent 65%);
+}
+
+.green-strip h2 {
+  font-family: var(--font-h);
+  color: #fff;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  margin-bottom: 14px;
+  position: relative;
+}
+
+.green-strip p {
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 560px;
+  margin: 0 auto 30px;
+  font-size: 1rem;
+  line-height: 1.7;
+  position: relative;
+}
+
+.btn-gold {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--navy);
+  padding: 15px 40px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-family: var(--font-h);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  transition: all 0.3s;
+  position: relative;
+  text-decoration: none;
+}
+
+.btn-gold:hover {
+  background: var(--gold-light);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* ─────────────────────────────────────
    RESPONSIVE STYLES
    ───────────────────────────────────── */
 @media (max-width: 768px) {
@@ -247,5 +304,18 @@
   .contact-block-btn {
     width: 100%;
     text-align: center;
+  }
+  
+  .green-strip h2 {
+    font-size: 1.3rem;
+  }
+  
+  .green-strip p {
+    font-size: 0.9rem;
+  }
+  
+  .btn-gold {
+    padding: 12px 30px;
+    font-size: 0.75rem;
   }
 }
